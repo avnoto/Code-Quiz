@@ -11,14 +11,14 @@ const questionsArr = [
     
     },
     {
-        question: "What was the answer to question 1?",
+        question: "How many planets are in the Solar System?",
         choices: [
-            "choice 1",
-            "choice 2",
-            "choice 3",
-            "choice 4"
+            "10",
+            "9",
+            "8",
+            "0"
         ],
-        answer: "choice 2"
+        answer: "8"
     
     } 
 
