@@ -13,19 +13,31 @@
 <body>
     <div class="container">
         <div class="jumbotron vertical-center text-center">
-            <h1 id="display-4">Code Quiz</h1>
-            <p id="lead">Theme of quiz goes here</p>
+            <h1 id="display-4">Space Trivia Quiz</h1>
+            <h3>How well do you know the universe we live in?</h3>
             <hr id="my-4">
-            <p>Instructions go here</p>
-            <p id="lead1">
-                <a class="btn btn-primary btn-lg hide" role="button" id="choice1" onclick="submitChoice()">A</a>
-                <a class="btn btn-primary btn-lg hide" role="button" id="choice2" onclick="submitChoice()">B</a>
-                <a class="btn btn-primary btn-lg hide" role="button" id="choice3" onclick="submitChoice()">C</a>
-                <a class="btn btn-primary btn-lg hide" role="button" id="choice4" onclick="submitChoice()">D</a>
+            <p id="lead">There are _ questions total. You have 10 seconds to answer each question.
+
+                If you answer before the time limit, you can press Next to move on to the next question.
+
+                Your score will be totalled at the end.</p>
+            <p id="lead1" class="hide">
+                <a class="btn btn-primary btn-lg" role="button" id="A" onclick="checkAnswer('A')">A</a>
+                <a class="btn btn-primary btn-lg" role="button" id="B" onclick="checkAnswer('B')">B</a>
+                <a class="btn btn-primary btn-lg" role="button" id="C" onclick="checkAnswer('C')">C</a>
+                <a class="btn btn-primary btn-lg" role="button" id="D" onclick="checkAnswer('D')">D</a>
             </p>
             <p id="lead1">
                 <a class="btn btn-primary btn-lg" role="button" id="playButton" onclick="startQuiz()">Play</a>
-                <a class="btn btn-primary btn-lg" role="button" id="nextButton" onclick="nextQuestion()">Next</a>
+                <a class="btn btn-primary btn-lg hide" role="button" id="nextButton" onclick="nextQuestion()">Next</a>
+            </p>
+            <h3 id="counter" class="hide">Seconds Left</h3>
+            <p id="progress">
+                <div class="progress hide">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    </div>
+                </div>
             </p>
         </div>
     </div>
