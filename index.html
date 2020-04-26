@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <div class="jumbotron vertical-center text-center">
-            <h1 id="display-4">Space Trivia Quiz</h1>
+            <h1 id="display-4">SPACE TRIVIA</h1>
             <br>
             <p id="gameText">How well do you know the universe we live in?</p>
             <hr id="my-4">
@@ -23,16 +24,14 @@
                 Your score will be totalled at the end.</p>
             <p id="youGot"></p>
             <br>
-            <p id="lead1" class="hide">
-                <label class="btn btn-primary btn-lg" aria-pressed="false" role="button" id="A"
-                    onclick="checkAnswer('A')"></label>
-                <label class="btn btn-primary btn-lg" aria-pressed="false" role="button" id="B"
-                    onclick="checkAnswer('B')"></label>
-                <label class="btn btn-primary btn-lg" aria-pressed="false" role="button" id="C"
-                    onclick="checkAnswer('C')"></label>
-                <label class="btn btn-primary btn-lg" aria-pressed="false" role="button" id="D"
-                    onclick="checkAnswer('D')"></label>
-            </p>
+            <div id="buttonContainer" class="hide">
+                <p id="lead1">
+                    <label class="btn btn-primary btn-lg" role="button" id="A" onclick="checkAnswer('A')"></label>
+                    <label class="btn btn-primary btn-lg" role="button" id="B" onclick="checkAnswer('B')"></label>
+                    <label class="btn btn-primary btn-lg" role="button" id="C" onclick="checkAnswer('C')"></label>
+                    <label class="btn btn-primary btn-lg" role="button" id="D" onclick="checkAnswer('D')"></label>
+                </p>
+            </div>
             <p id="score"></p>
             <p id="response"></p>
             <p id="lead2">

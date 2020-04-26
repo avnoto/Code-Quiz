@@ -1,6 +1,7 @@
 body {
     background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
     z-index:0;
+    background-attachment: fixed;
 
 }
 
@@ -23,10 +24,15 @@ body {
     font-size: 18px;
 }
 
-.correct {
-    background-color: green !important;
+#display-4 {
+    font-family: 'Play', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
 }
 
-.incorrect {
-    background-color: red !important;
+#lead1 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+    
 }
