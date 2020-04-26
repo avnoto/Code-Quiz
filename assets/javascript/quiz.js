@@ -1,6 +1,5 @@
-questionsArr = []
 let lastQuestionIndex = questionsArr.length-1;
-let currrentQuestionIndex = 0;
+let currentQuestionIndex = 0;
 let qLead = document.getElementById("lead");
 const choice1 = document.getElementById("A");
 const choice2 = document.getElementById("B");
@@ -9,15 +8,19 @@ const choice4 = document.getElementById("D");
 let progress = document.getElementById("progress");
 let counter = document.getElementById("counter");
 let score = 0;
-let count = 10;
-let newCount = 5;
-let timer;
+const QUESTION_COUNT = 6;
+const NEXT_QUESTION_COUNT = 5;
+let count = QUESTION_COUNT;
+let nextCount = NEXT_QUESTION_COUNT;
+let qInterval = null;
+let nextQInterval = null;
+let buttonBlock = false;
 
 
 
 function getQuestion() {
     document.getElementById("lead1").classList.remove("hide");
-    let q = questionsArr[currrentQuestionIndex];
+    let q = questionsArr[currentQuestionIndex];
     qLead.innerHTML = q.question;
     choice1.innerHTML = q.choiceA;
     choice2.innerHTML = q.choiceB;
@@ -36,35 +39,42 @@ function answerIsWrong() {
 
 
 function checkAnswer(answer) {
-    if(questionsArr[currrentQuestionIndex].correct == answer) {
-        score++;
-        answerIsCorrect();
-        clearInterval(timerInterval);
-        fiveSecondTimer();
-        
-    } 
-    else {
-        score--;
-        answerIsWrong();
-        clearInterval(timerInterval);
-        fiveSecondTimer(); 
+    if (buttonBlock == false) {
+    
+        if(questionsArr[currentQuestionIndex].correct == answer) {
+            score++;
+            answerIsCorrect();
+            clearInterval(qInterval);
+            fiveSecondTimer();
+            
+        } 
+        else {
+            score--;
+            answerIsWrong();
+            clearInterval(qInterval);
+            fiveSecondTimer(); 
 
-    }
+        }
 
-    if(newCount === 0 || count === 0) {
-        currrentQuestionIndex++
-        getQuestion();
-        qTimer();
-        clearInterval(timerInterval);
-        clearInterval(newTimerInterval);
-        
-    } 
-    else {
-        clearInterval(timerInterval);
+        if(nextCount === 0 || count === 0) {
+            currentQuestionIndex++
+            getQuestion();
+            qTime
+            clearInterval(qInterval);
+            clearInterval(nextQInterval);
+            
+        } 
+        else {
+            clearInterval(qInterval);
+        } 
+        buttonBlock = true;
     }
 }
 
+function scoreCard() {
+    
 
+}
 
 function startQuiz() {
     document.getElementById("playButton").style.display = "none";
@@ -75,40 +85,52 @@ function startQuiz() {
 
 }
 
-
-function qTimer() {
-  let timerInterval = setInterval(function() {
-    counter.innerHTML = count;
+function showQTime() {
     count--;
-
+    counter.innerHTML = count;
     if (count === 0) {
         answerIsWrong();
-        counter.innerHTML = "";
         fiveSecondTimer();
-            if (currrentQuestionIndex < lastQuestionIndex) {
-                currrentQuestionIndex++;
-                getQuestion();
-            }
-            else {
-                clearInterval(timerInterval);
-            }
-        
     }
+    
+    return count;
+}
 
-  }, 1000);
+function showNextQTime() {
+    nextCount--;
+    counter.innerHTML = "Next Question in: " + nextCount;
+    
+    if (nextCount === 0) {
+        if (currentQuestionIndex < lastQuestionIndex) {
+            currentQuestionIndex++;
+            getQuestion();
+            qTimer();
+        }
+        else {
+            counter.innerHTML = "";
+        }
+    }
+    
+    return nextCount;
+}
+
+function qTimer() {
+    count = QUESTION_COUNT;
+    showQTime();
+     qInterval = setInterval(() => {
+        if (showQTime() == 0) { clearInterval(qInterval) }
+    }, 1000);
 }
 
 
 function fiveSecondTimer() {
-    let newTimerInterval = setInterval(function() {
-        counter.innerHTML = "Next Question in: " + newCount;
-        newCount--;
-    
-        if (newCount === 0) {
-            counter.innerHTML = "";
-            getQuestion();
-            clearInterval(newTimerInterval);
+    nextCount = NEXT_QUESTION_COUNT;
+    nextQInterval = setInterval(() => {
+        if (showNextQTime() == 0) { 
+            buttonBlock = false;
+            clearInterval(nextQInterval) 
         }
-    
- }, 1000);
+
+    }, 1000);
 }
+
