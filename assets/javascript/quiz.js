@@ -24,10 +24,10 @@ function getQuestion() {
     document.getElementById("buttonContainer").classList.remove("hide");
     let q = questionsArr[currentQuestionIndex];
     qLead.innerHTML = q.question;
-    choice1.innerHTML = q.choiceA;
-    choice2.innerHTML = q.choiceB;
-    choice3.innerHTML = q.choiceC;
-    choice4.innerHTML = q.choiceD;
+    choice1.innerHTML = "A. " + q.choiceA;
+    choice2.innerHTML = "B. " + q.choiceB;
+    choice3.innerHTML = "C. " + q.choiceC;
+    choice4.innerHTML = "D. " + q.choiceD;
     document.getElementById("response").innerHTML = "";
 }
 
@@ -38,7 +38,8 @@ function answerIsCorrect() {
 }
 
 function answerIsWrong() {
-    document.getElementById("response").innerHTML = "Incorrect!";
+    document.getElementById("response").innerHTML = "Incorrect! The correct answer is: " + questionsArr[currentQuestionIndex].correct;
+
 
 }
 

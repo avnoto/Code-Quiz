@@ -36,7 +36,7 @@ const questionsArr = [
         choiceA: "White Dwarf",
         choiceB: "Red Dwarf",
         choiceC: "Blue Dwarf",
-        choiceD: "Seventh Dwarf",
+        choiceD: "Seventh",
         correct: 'B'
     } 
 
