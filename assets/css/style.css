@@ -20,7 +20,7 @@ body {
     font-style: italic;
 }
 
-#lead, #score, #response {
+#lead, #score, #response, #youGot {
     font-size: 18px;
 }
 
@@ -41,3 +41,14 @@ body {
     box-shadow: 0 10px 40px 0 rgba(0,0,0,.1);
     border-radius: 10px;
 }
+
+.correct {
+    background-color: rgb(21, 204, 21);
+    border-color:  rgb(21, 204, 21);
+}
+
+.wrong {
+    background-color: rgba(255, 0, 0, 0.877);
+    border-color:  rgba(255, 0, 0, 0.877);
+}
+

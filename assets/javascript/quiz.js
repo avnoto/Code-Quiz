@@ -5,8 +5,11 @@ const choice1 = document.getElementById("A");
 const choice2 = document.getElementById("B");
 const choice3 = document.getElementById("C");
 const choice4 = document.getElementById("D");
-let progress = document.getElementById("progress");
+let progress = document.getElementsByClassName("progress-bar");
 let counter = document.getElementById("counter");
+let response = document.getElementById("response");
+let playBtn = document.getElementById("play-button");
+let youGot = document.getElementById("you-got");
 let score = 0;
 const QUESTION_COUNT = 11;
 const NEXT_QUESTION_COUNT = 6;
@@ -19,27 +22,27 @@ let buttonBlock = false;
 
 
 function getQuestion() {
-    document.getElementsByClassName("progress-bar").item(0).setAttribute("style", "width:" + ((currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100) + "%");
-    document.getElementsByClassName("progress-bar").item(0).setAttribute("aria-valuenow", (currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100);
-    document.getElementById("buttonContainer").classList.remove("hide");
+    progress.item(0).setAttribute("style", "width:" + ((currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100) + "%");
+    progress.item(0).setAttribute("aria-valuenow", (currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100);
+    document.getElementById("button-container").classList.remove("hide");
     let q = questionsArr[currentQuestionIndex];
     qLead.innerHTML = q.question;
     choice1.innerHTML = "A. " + q.choiceA;
     choice2.innerHTML = "B. " + q.choiceB;
     choice3.innerHTML = "C. " + q.choiceC;
     choice4.innerHTML = "D. " + q.choiceD;
-    document.getElementById("response").innerHTML = "";
+    response.innerHTML = "";
 }
 
 
 function answerIsCorrect() {
-    document.getElementById("response").innerHTML = "Correct!";
-
+    response.innerHTML = "Correct!";
+    response.style.color = "green";
 }
 
 function answerIsWrong() {
-    document.getElementById("response").innerHTML = "Incorrect! The correct answer is: " + questionsArr[currentQuestionIndex].correct;
-
+    response.innerHTML = "Incorrect! The correct answer is: " + questionsArr[currentQuestionIndex].correct;
+    response.style.color = "red";
 
 }
 
@@ -67,18 +70,20 @@ function checkAnswer(answer) {
 
 function scoreCard() {
     qLead.style.display = "none";
-    document.getElementById("buttonContainer").classList.add("hide");
-    document.getElementById("playButton").style.display = "inline";
-    document.getElementById("playButton").innerHTML = "Play Again";
-    document.getElementById("youGot").style.display = "block";
+    document.getElementById("button-container").classList.add("hide");
+    playBtn.style.display = "inline";
+    playBtn.innerHTML = "Play Again";
+    youGot.style.display = "block";
     document.getElementById("score").style.display = "block";
-    document.getElementById("youGot").innerHTML = "You got:";
-    document.getElementById("score").innerHTML = score;
+    youGot.innerHTML = "You got:";
+    document.getElementById("score").innerHTML = score + " / 5";
     if (score >= questionsArr.length * 0.7) {
-        document.getElementById("response").innerHTML = "Good Job!";
+        response.innerHTML = "Good Job!";
+        response.style.color = "green";
     }
     else {
-        document.getElementById("response").innerHTML = "Better luck next time.";
+        response.innerHTML = "Better luck next time.";
+        response.style.color = "red";
     }
 
 }
@@ -86,10 +91,11 @@ function scoreCard() {
 function startQuiz() {
     score = 0;
     currentQuestionIndex = 0;
-    document.getElementById("playButton").style.display = "none";
+    qLead.style.display = "block";
+    playBtn.style.display = "none";
     document.getElementById("score").style.display = "none";
-    document.getElementById("youGot").style.display = "none";
-    document.getElementById("response").innerHTML = "";
+    youGot.style.display = "none";
+    response.innerHTML = "";
 
     qTimer();
     getQuestion();
