@@ -22,7 +22,7 @@ const questionsArr = [
         choiceC: "75",
         choiceD: "1",
         correct: 'A'
-    } 
+    }, 
     {
         question: "What was the answer to question 1?",
         choiceA: "A",
@@ -30,7 +30,7 @@ const questionsArr = [
         choiceC: "C",
         choiceD: "D",
         correct: 'B'
-    } 
+    }, 
     {
         question: "Does Hayden like feet pics?",
         choiceA: "yes",

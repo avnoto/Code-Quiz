@@ -8,8 +8,8 @@ const choice4 = document.getElementById("D");
 let progress = document.getElementById("progress");
 let counter = document.getElementById("counter");
 let score = 0;
-const QUESTION_COUNT = 6;
-const NEXT_QUESTION_COUNT = 5;
+const QUESTION_COUNT = 11;
+const NEXT_QUESTION_COUNT = 6;
 let count = QUESTION_COUNT;
 let nextCount = NEXT_QUESTION_COUNT;
 let qInterval = null;
@@ -26,6 +26,7 @@ function getQuestion() {
     choice2.innerHTML = q.choiceB;
     choice3.innerHTML = q.choiceC;
     choice4.innerHTML = q.choiceD;
+    document.getElementById("response").innerHTML = "";
 }
 
 
@@ -49,36 +50,42 @@ function checkAnswer(answer) {
             
         } 
         else {
-            score--;
             answerIsWrong();
             clearInterval(qInterval);
             fiveSecondTimer(); 
 
         }
 
-        if(nextCount === 0 || count === 0) {
-            currentQuestionIndex++
-            getQuestion();
-            qTime
-            clearInterval(qInterval);
-            clearInterval(nextQInterval);
-            
-        } 
-        else {
-            clearInterval(qInterval);
-        } 
         buttonBlock = true;
     }
 }
 
 function scoreCard() {
-    
+    qLead.style.display = "none";
+    document.getElementById("lead1").classList.add("hide");
+    document.getElementById("playButton").style.display = "block";
+    document.getElementById("playButton").innerHTML = "Play Again";
+    document.getElementById("youGot").style.display = "block";
+    document.getElementById("score").style.display = "block";
+    document.getElementById("youGot").innerHTML = "You got:";
+    document.getElementById("score").innerHTML = score;
+    if (score >= questionsArr.length * 0.7) {
+        document.getElementById("response").innerHTML = "Good Job!";
+    }
+    else {
+        document.getElementById("response").innerHTML = "Better luck next time.";
+    }
 
 }
 
 function startQuiz() {
+    score = 0;
+    currentQuestionIndex = 0;
     document.getElementById("playButton").style.display = "none";
-    
+    document.getElementById("score").style.display = "none";
+    document.getElementById("youGot").style.display = "none";
+    document.getElementById("response").innerHTML = "";
+
     qTimer();
     getQuestion();
     
@@ -97,6 +104,9 @@ function showQTime() {
 }
 
 function showNextQTime() {
+    if (buttonBlock == false) {
+        buttonBlock = true;
+    }
     nextCount--;
     counter.innerHTML = "Next Question in: " + nextCount;
     
@@ -108,6 +118,7 @@ function showNextQTime() {
         }
         else {
             counter.innerHTML = "";
+            scoreCard();
         }
     }
     
