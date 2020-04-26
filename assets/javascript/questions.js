@@ -24,20 +24,20 @@ const questionsArr = [
         correct: 'A'
     }, 
     {
-        question: "What was the answer to question 1?",
-        choiceA: "A",
-        choiceB: "B",
-        choiceC: "C",
-        choiceD: "D",
-        correct: 'B'
+        question: "Which planet is furthest away from the sun?",
+        choiceA: "Mars",
+        choiceB: "Venus",
+        choiceC: "Earth",
+        choiceD: "Neptune",
+        correct: 'D'
     }, 
     {
-        question: "Does Hayden like feet pics?",
-        choiceA: "yes",
-        choiceB: "yes",
-        choiceC: "yes",
-        choiceD: "yes",
-        correct: 'D'
+        question: "What is the most common type of star found in the Milky Way?",
+        choiceA: "White Dwarf",
+        choiceB: "Red Dwarf",
+        choiceC: "Blue Dwarf",
+        choiceD: "Seventh Dwarf",
+        correct: 'B'
     } 
 
 ];

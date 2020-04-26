@@ -19,6 +19,8 @@ let buttonBlock = false;
 
 
 function getQuestion() {
+    document.getElementsByClassName("progress-bar").item(0).setAttribute("style", "width:" + ((currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100) + "%");
+    document.getElementsByClassName("progress-bar").item(0).setAttribute("aria-valuenow", (currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100);
     document.getElementById("lead1").classList.remove("hide");
     let q = questionsArr[currentQuestionIndex];
     qLead.innerHTML = q.question;
@@ -63,7 +65,7 @@ function checkAnswer(answer) {
 function scoreCard() {
     qLead.style.display = "none";
     document.getElementById("lead1").classList.add("hide");
-    document.getElementById("playButton").style.display = "block";
+    document.getElementById("playButton").style.display = "inline";
     document.getElementById("playButton").innerHTML = "Play Again";
     document.getElementById("youGot").style.display = "block";
     document.getElementById("score").style.display = "block";
