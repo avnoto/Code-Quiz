@@ -8,6 +8,11 @@ const choice3 = document.getElementById("C");
 const choice4 = document.getElementById("D");
 let progress = document.getElementById("progress");
 let counter = document.getElementById("counter");
+let score = 0;
+let count = 10;
+let newCount = 5;
+let timer;
+
 
 
 function getQuestion() {
@@ -21,65 +26,89 @@ function getQuestion() {
 }
 
 
-// function answerIsCorrect() {
-//     document.getElementById(currrentQuestionIndex).style.backgroundColor = "green";
-// }
-// function answerIsWrong() {
-//     document.getElementById(currrentQuestionIndex).style.backgroundColor = "red";
-// }
+function answerIsCorrect() {
+    document.getElementById("response").innerHTML = "Correct!";
+    
+}
+function answerIsWrong() {
+    document.getElementById("response").innerHTML = "Incorrect!";
+}
 
 
-// function checkAnswer(answer) {
-//     if(questionsArr[currrentQuestionIndex].correct == answer) {
-//         score++;
-//         answerIsCorrect();
-//     } 
-//     else {
-//         answerIsWrong();
-//     }
-//     if(currrentQuestionIndex < lastQuestionIndex) {
-//         count = 0;
-//         currrentQuestionIndex++;
-//         questionRender();
-//     } 
-//     else {
-//         clearInterval(timer);
-//     }
-// }
+function checkAnswer(answer) {
+    if(questionsArr[currrentQuestionIndex].correct == answer) {
+        score++;
+        answerIsCorrect();
+        clearInterval(timerInterval);
+        fiveSecondTimer();
+        
+    } 
+    else {
+        score--;
+        answerIsWrong();
+        clearInterval(timerInterval);
+        fiveSecondTimer(); 
+
+    }
+
+    if(newCount === 0 || count === 0) {
+        currrentQuestionIndex++
+        getQuestion();
+        qTimer();
+        clearInterval(timerInterval);
+        clearInterval(newTimerInterval);
+        
+    } 
+    else {
+        clearInterval(timerInterval);
+    }
+}
 
 
 
 function startQuiz() {
     document.getElementById("playButton").style.display = "none";
-    document.getElementById("nextButton").classList.remove("hide");
     
+    qTimer();
     getQuestion();
+    
 
-    }
-
-function nextQuestion() {
-    currrentQuestionIndex++;
 }
 
 
+function qTimer() {
+  let timerInterval = setInterval(function() {
+    counter.innerHTML = count;
+    count--;
+
+    if (count === 0) {
+        answerIsWrong();
+        counter.innerHTML = "";
+        fiveSecondTimer();
+            if (currrentQuestionIndex < lastQuestionIndex) {
+                currrentQuestionIndex++;
+                getQuestion();
+            }
+            else {
+                clearInterval(timerInterval);
+            }
+        
+    }
+
+  }, 1000);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-var time = 0;
-var question;
-var correctGuess = 0;
-var incorrectGuess = 0;
-var questionCount = 0;
-var twentySecondTimer;
+function fiveSecondTimer() {
+    let newTimerInterval = setInterval(function() {
+        counter.innerHTML = "Next Question in: " + newCount;
+        newCount--;
+    
+        if (newCount === 0) {
+            counter.innerHTML = "";
+            getQuestion();
+            clearInterval(newTimerInterval);
+        }
+    
+ }, 1000);
+}
