@@ -7,8 +7,26 @@ body {
 .jumbotron {
     margin-top: 100px;
     vertical-align: middle;
+    border-radius: 14px !important;
 }
 
 .hide {
     display: none;
+}
+
+#gameText {
+    font-size: 22px;
+    font-style: italic;
+}
+
+#lead, #score, #response {
+    font-size: 18px;
+}
+
+.correct {
+    background-color: green !important;
+}
+
+.incorrect {
+    background-color: red !important;
 }

@@ -14,22 +14,29 @@
     <div class="container">
         <div class="jumbotron vertical-center text-center">
             <h1 id="display-4">Space Trivia Quiz</h1>
-            <p>How well do you know the universe we live in?</p>
+            <br>
+            <p id="gameText">How well do you know the universe we live in?</p>
             <hr id="my-4">
-            <p id="lead">There are 5 questions total. You have 10 seconds to answer each question.
-
+            <br>
+            <p id="lead">There are 5 questions total.
+                You have 10 seconds to answer each question.
                 Your score will be totalled at the end.</p>
             <p id="youGot"></p>
+            <br>
             <p id="lead1" class="hide">
-                <a class="btn btn-primary btn-lg" role="button" id="A" onclick="checkAnswer('A')">A</a>
-                <a class="btn btn-primary btn-lg" role="button" id="B" onclick="checkAnswer('B')">B</a>
-                <a class="btn btn-primary btn-lg" role="button" id="C" onclick="checkAnswer('C')">C</a>
-                <a class="btn btn-primary btn-lg" role="button" id="D" onclick="checkAnswer('D')">D</a>
+                <label class="btn btn-primary btn-lg" aria-pressed="false" role="button" id="A"
+                    onclick="checkAnswer('A')"></label>
+                <label class="btn btn-primary btn-lg" aria-pressed="false" role="button" id="B"
+                    onclick="checkAnswer('B')"></label>
+                <label class="btn btn-primary btn-lg" aria-pressed="false" role="button" id="C"
+                    onclick="checkAnswer('C')"></label>
+                <label class="btn btn-primary btn-lg" aria-pressed="false" role="button" id="D"
+                    onclick="checkAnswer('D')"></label>
             </p>
             <p id="score"></p>
             <p id="response"></p>
             <p id="lead2">
-                <a class="btn btn-primary btn-lg" role="button" id="playButton" onclick="startQuiz()">Play</a>
+                <label class="btn btn-primary btn-lg" role="button" id="playButton" onclick="startQuiz()">Play</label>
             </p>
             <h3 id="counter"></h3>
             <p>
@@ -41,9 +48,6 @@
             </p>
         </div>
     </div>
-
-
-
 
 
     <script src="assets/javascript/questions.js"></script>

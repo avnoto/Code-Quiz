@@ -34,10 +34,12 @@ function getQuestion() {
 
 function answerIsCorrect() {
     document.getElementById("response").innerHTML = "Correct!";
-    
+
 }
+
 function answerIsWrong() {
     document.getElementById("response").innerHTML = "Incorrect!";
+
 }
 
 
