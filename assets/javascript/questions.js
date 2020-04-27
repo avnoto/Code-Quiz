@@ -9,10 +9,10 @@ const questionsArr = [
     },
     {
         question: "How many planets are in the Solar System?",
-        choiceA: "10",
-        choiceB: "9",
-        choiceC: "8",
-        choiceD: "1",
+        choiceA: "10 planets",
+        choiceB: "9 planets",
+        choiceC: "8 planets",
+        choiceD: "1 planet",
         correct: 'C'
     },
     {
@@ -25,10 +25,10 @@ const questionsArr = [
     },
     {
         question: "How many moons are in our Solar System?",
-        choiceA: "181",
-        choiceB: "152",
-        choiceC: "75",
-        choiceD: "1",
+        choiceA: "181 moons",
+        choiceB: "152 moons",
+        choiceC: "75 moons",
+        choiceD: "1 moon",
         correct: 'A'
     }, 
     {

@@ -8,12 +8,12 @@ body {
 .custom-panel {
     background-color: white;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 40px;
     border-radius: 14px !important;
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
-    max-height: 700px;
+    max-height: 650px;
     padding: 40px 40px;
 }
 
@@ -54,11 +54,11 @@ h1 {
 }
 
 .btn {
-    border-radius: 5px;
+    border-radius: 8px;
     white-space: normal !important;
 }
 
-.correct {
+/* .correct {
     background-color: rgb(21, 204, 21);
     border-color:  rgb(21, 204, 21);
 }
@@ -66,7 +66,7 @@ h1 {
 .wrong {
     background-color: rgba(255, 0, 0, 0.877);
     border-color:  rgba(255, 0, 0, 0.877);
-}
+} */
 
 .progress {
     margin-top: 30px;

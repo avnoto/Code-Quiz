@@ -67,7 +67,6 @@ function checkAnswer(answer) {
 }
 
 
-
 function scoreCard() {
     qLead.style.display = "none";
     document.getElementById("lead1").classList.add("hide");
@@ -78,11 +77,11 @@ function scoreCard() {
     youGot.innerHTML = "You got:";
     document.getElementById("score").innerHTML = score + " / 5";
     if (score >= questionsArr.length * 0.7) {
-        response.innerHTML = "Good Job!";
+        response.innerHTML = "You're out of this world!";
         response.style.color = "green";
     }
     else {
-        response.innerHTML = "Better luck next time.";
+        response.innerHTML = "Houston, we have a problem...";
         response.style.color = "red";
     }
 
