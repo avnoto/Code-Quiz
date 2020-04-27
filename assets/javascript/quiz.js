@@ -19,7 +19,6 @@ let qInterval = null;
 let nextQInterval = null;
 let buttonBlock = false;
 
-
 function getQuestion() {
     progress.item(0).setAttribute("style", "width:" + ((currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100) + "%");
     progress.item(0).setAttribute("aria-valuenow", (currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100);
