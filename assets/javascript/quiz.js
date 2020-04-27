@@ -20,18 +20,18 @@ let nextQInterval = null;
 let buttonBlock = false;
 
 
-
 function getQuestion() {
     progress.item(0).setAttribute("style", "width:" + ((currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100) + "%");
     progress.item(0).setAttribute("aria-valuenow", (currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100);
-    document.getElementById("button-container").classList.remove("hide");
+    document.getElementById("lead1").classList.remove("hide");
     let q = questionsArr[currentQuestionIndex];
-    qLead.innerHTML = q.question;
+    qLead.innerHTML = q.question.italics();
     choice1.innerHTML = "A. " + q.choiceA;
     choice2.innerHTML = "B. " + q.choiceB;
     choice3.innerHTML = "C. " + q.choiceC;
     choice4.innerHTML = "D. " + q.choiceD;
     response.innerHTML = "";
+    
 }
 
 
@@ -46,10 +46,8 @@ function answerIsWrong() {
 
 }
 
-
 function checkAnswer(answer) {
     if (buttonBlock == false) {
-    
         if(questionsArr[currentQuestionIndex].correct == answer) {
             score++;
             answerIsCorrect();
@@ -68,9 +66,11 @@ function checkAnswer(answer) {
     }
 }
 
+
+
 function scoreCard() {
     qLead.style.display = "none";
-    document.getElementById("button-container").classList.add("hide");
+    document.getElementById("lead1").classList.add("hide");
     playBtn.style.display = "inline";
     playBtn.innerHTML = "Play Again";
     youGot.style.display = "block";

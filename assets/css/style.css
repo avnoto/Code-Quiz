@@ -5,10 +5,16 @@ body {
 
 }
 
-.jumbotron {
-    margin-top: 100px;
-    vertical-align: middle;
+.custom-panel {
+    background-color: white;
+    text-align: center;
+    margin-top: 60px;
     border-radius: 14px !important;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    max-height: 700px;
+    padding: 40px 40px;
 }
 
 .hide {
@@ -16,21 +22,31 @@ body {
 }
 
 #gameText {
-    font-size: 22px;
-    font-style: italic;
+    font-size: 24px;
 }
 
-#lead, #score, #response, #youGot {
+#lead {
     font-size: 18px;
+    display: block;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
 }
 
-#display-4 {
+#response {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+h1 {
     font-family: 'Play', sans-serif;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 65px;
 }
 
-#lead1 {
+#button-container {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 20px;
@@ -38,8 +54,8 @@ body {
 }
 
 .btn {
-    box-shadow: 0 10px 40px 0 rgba(0,0,0,.1);
-    border-radius: 10px;
+    border-radius: 5px;
+    white-space: normal !important;
 }
 
 .correct {
@@ -52,3 +68,6 @@ body {
     border-color:  rgba(255, 0, 0, 0.877);
 }
 
+.progress {
+    margin-top: 30px;
+}

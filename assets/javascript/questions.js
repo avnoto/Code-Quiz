@@ -16,6 +16,14 @@ const questionsArr = [
         correct: 'C'
     },
     {
+        question: "Which planet is furthest away from the sun?",
+        choiceA: "Mars",
+        choiceB: "Venus",
+        choiceC: "Earth",
+        choiceD: "Neptune",
+        correct: 'D'
+    },
+    {
         question: "How many moons are in our Solar System?",
         choiceA: "181",
         choiceB: "152",
@@ -24,19 +32,11 @@ const questionsArr = [
         correct: 'A'
     }, 
     {
-        question: "Which planet is furthest away from the sun?",
-        choiceA: "Mars",
-        choiceB: "Venus",
-        choiceC: "Earth",
-        choiceD: "Neptune",
-        correct: 'D'
-    }, 
-    {
         question: "What is the most common type of star found in the Milky Way?",
         choiceA: "White Dwarf",
         choiceB: "Red Dwarf",
         choiceC: "Blue Dwarf",
-        choiceD: "Seventh",
+        choiceD: "Grumpy Dwarf",
         correct: 'B'
     } 
 
