@@ -14,10 +14,10 @@
 </head>
 
 <body>
-    <div class="float-left">
+    <div id="float-left" class="float-ease-in-out">
         <img src="assets/images/astronaut.png" id="ast-img" alt="Astronaut floating in outer space">
     </div>
-    <div class="float-right">
+    <div id="float-right" class="float-ease-out">
         <img src="assets/images/Untitled-1.png" id="rock-img" alt="Asteroid floating in outer space">
     </div>
     <div class="container">
@@ -42,23 +42,26 @@
                 <br>
                 <div id="lead1" class="hide">
                     <div id="button-container">
-                        <label class="btn btn-primary btn-lg" role="button" id="A" onclick="checkAnswer('A')"></label>
-                        <label class="btn btn-primary btn-lg" role="button" id="B" onclick="checkAnswer('B')"></label>
-                        <label class="btn btn-primary btn-lg" role="button" id="C" onclick="checkAnswer('C')"></label>
-                        <label class="btn btn-primary btn-lg" role="button" id="D" onclick="checkAnswer('D')"></label>
+                        <label class="btn btn-primary btn-lg box-shadow--8dp" role="button" id="A"
+                            onclick="checkAnswer('A')"></label>
+                        <label class="btn btn-primary btn-lg box-shadow--8dp" role="button" id="B"
+                            onclick="checkAnswer('B')"></label>
+                        <label class="btn btn-primary btn-lg box-shadow--8dp" role="button" id="C"
+                            onclick="checkAnswer('C')"></label>
+                        <label class="btn btn-primary btn-lg box-shadow--8dp" role="button" id="D"
+                            onclick="checkAnswer('D')"></label>
                     </div>
                 </div>
                 <h2 id="score"> </h2>
                 <p id="response"> </p>
                 <div></div>
-                <div></div>
                 <div id="control-btn">
-                    <label class="btn btn-primary btn-lg" role="button" id="play-button"
+                    <label class="btn btn-primary btn-lg box-shadow--8dp" role="button" id="play-button"
                         onclick="startQuiz()">Play</label>
                 </div>
                 <div></div>
                 <h3 id="counter"> </h3>
-                <div></div>
+                <div> </div>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
                         aria-valuemax="100">

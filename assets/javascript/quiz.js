@@ -97,7 +97,6 @@ function startQuiz() {
 
     qTimer();
     getQuestion();
-    
 
 }
 
@@ -117,7 +116,7 @@ function showNextQTime() {
         buttonBlock = true;
     }
     nextCount--;
-    counter.innerHTML = "Next Question in: " + nextCount;
+    counter.innerHTML = "NEXT QUESTION IN: " + nextCount;
     
     if (nextCount === 0) {
         if (currentQuestionIndex < lastQuestionIndex) {
