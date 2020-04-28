@@ -5,7 +5,7 @@ const questionsArr = [
         choiceB:  "13.8 billion years old",
         choiceC:  "10.3 trillion years old",
         choiceD:  "1.2 million years old",
-        correct:  "13.8 billion years old"
+        correct:  'B'
     },
     {
         question: "How many planets are in the Solar System?",
@@ -13,7 +13,7 @@ const questionsArr = [
         choiceB: "9 planets",
         choiceC: "8 planets",
         choiceD: "1 planet",
-        correct: "8 planets"
+        correct: 'C'
     },
     {
         question: "Which planet is furthest away from the sun?",
@@ -21,7 +21,7 @@ const questionsArr = [
         choiceB: "Venus",
         choiceC: "Earth",
         choiceD: "Neptune",
-        correct: "Neptune"
+        correct: 'D'
     },
     {
         question: "How many moons are in our Solar System?",
@@ -29,7 +29,7 @@ const questionsArr = [
         choiceB: "152 moons",
         choiceC: "75 moons",
         choiceD: "1 moon",
-        correct: "181 moons"
+        correct: 'A'
     }, 
     {
         question: "What is the most common type of star found in the Milky Way?",
@@ -37,7 +37,7 @@ const questionsArr = [
         choiceB: "Red Dwarf",
         choiceC: "Blue Dwarf",
         choiceD: "Grumpy Dwarf",
-        correct: "Red Dwarf"
+        correct: 'B'
     } 
 
 ];
