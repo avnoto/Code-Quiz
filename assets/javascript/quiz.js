@@ -25,10 +25,10 @@ function getQuestion() {
     document.getElementById("lead1").classList.remove("hide");
     let q = questionsArr[currentQuestionIndex];
     qLead.innerHTML = q.question.italics();
-    choice1.innerHTML = "A. " + q.choiceA;
-    choice2.innerHTML = "B. " + q.choiceB;
-    choice3.innerHTML = "C. " + q.choiceC;
-    choice4.innerHTML = "D. " + q.choiceD;
+    choice1.innerHTML = q.choiceA;
+    choice2.innerHTML = q.choiceB;
+    choice3.innerHTML = q.choiceC;
+    choice4.innerHTML = q.choiceD;
     response.innerHTML = "";
     
 }
