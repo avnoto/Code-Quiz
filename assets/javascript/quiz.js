@@ -19,16 +19,17 @@ let qInterval = null;
 let nextQInterval = null;
 let buttonBlock = false;
 
+
 function getQuestion() {
     progress.item(0).setAttribute("style", "width:" + ((currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100) + "%");
     progress.item(0).setAttribute("aria-valuenow", (currentQuestionIndex + 1) / (lastQuestionIndex + 1) * 100);
     document.getElementById("lead1").classList.remove("hide");
     let q = questionsArr[currentQuestionIndex];
     qLead.innerHTML = q.question.italics();
-    choice1.innerHTML = "A. " + q.choiceA;
-    choice2.innerHTML = "B. " + q.choiceB;
-    choice3.innerHTML = "C. " + q.choiceC;
-    choice4.innerHTML = "D. " + q.choiceD;
+    choice1.innerHTML = q.choiceA;
+    choice2.innerHTML = q.choiceB;
+    choice3.innerHTML = q.choiceC;
+    choice4.innerHTML = q.choiceD;
     response.innerHTML = "";
     
 }
@@ -39,9 +40,23 @@ function answerIsCorrect() {
     response.style.color = "green";
 }
 
-function answerIsWrong() {
-    response.innerHTML = "Incorrect! The correct answer is: " + questionsArr[currentQuestionIndex].correct;
+function answerIsWrong(x) {
+    if (x == 'A') {
+    response.innerHTML = "Incorrect! The correct answer is: " + questionsArr[currentQuestionIndex].choiceA;
     response.style.color = "red";
+    }
+    if (x == 'B') {
+    response.innerHTML = "Incorrect! The correct answer is: " + questionsArr[currentQuestionIndex].choiceB;
+    response.style.color = "red";
+    }
+    if (x == 'C') {
+    response.innerHTML = "Incorrect! The correct answer is: " + questionsArr[currentQuestionIndex].choiceC;
+    response.style.color = "red";
+    }
+    if (x == 'D') {
+    response.innerHTML = "Incorrect! The correct answer is: " + questionsArr[currentQuestionIndex].choiceD;
+    response.style.color = "red";
+    }
 
 }
 
@@ -55,7 +70,7 @@ function checkAnswer(answer) {
             
         } 
         else {
-            answerIsWrong();
+            answerIsWrong(questionsArr[currentQuestionIndex].correct);
             clearInterval(qInterval);
             fiveSecondTimer(); 
 
@@ -152,4 +167,6 @@ function fiveSecondTimer() {
 
     }, 1000);
 }
+
+
 
