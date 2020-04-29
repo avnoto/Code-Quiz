@@ -50,7 +50,7 @@ function answerIsWrong(x) {
     response.style.color = "red";
     }
     if (x == 'C') {
-    response.innerHTML = "Incorrect! The correct answer is: " + questionsArr[currentQuestionIndex].choiceC;
+    response.innerHTML = "Incorrect! The correct answer is: " + questionsArr[currentQuestionIndex].choiceC + " " + "(Pluto is no longer classified as a planet.)";
     response.style.color = "red";
     }
     if (x == 'D') {
@@ -58,6 +58,25 @@ function answerIsWrong(x) {
     response.style.color = "red";
     }
 
+}
+
+function answerIsWrong() {
+    if (questionsArr[currentQuestionIndex].correct == 'A') {
+    response.innerHTML = "The correct answer is: " + questionsArr[currentQuestionIndex].choiceA;
+    response.style.color = "red";
+    }
+    if (questionsArr[currentQuestionIndex].correct == 'B') {
+    response.innerHTML = "The correct answer is: " + questionsArr[currentQuestionIndex].choiceB;
+    response.style.color = "red";
+    }
+    if (questionsArr[currentQuestionIndex].correct == 'C') {
+    response.innerHTML = "The correct answer is: " + questionsArr[currentQuestionIndex].choiceC + " " + "(Pluto is no longer classified as a planet.)";
+    response.style.color = "red";
+    }
+    if (questionsArr[currentQuestionIndex].correct == 'D') {
+    response.innerHTML = "The correct answer is: " + questionsArr[currentQuestionIndex].choiceD;
+    response.style.color = "red";
+    }
 }
 
 function checkAnswer(answer) {
@@ -71,9 +90,9 @@ function checkAnswer(answer) {
         } 
         else {
             answerIsWrong(questionsArr[currentQuestionIndex].correct);
+            answerIsWrong();
             clearInterval(qInterval);
             fiveSecondTimer(); 
-
         }
 
         buttonBlock = true;
